@@ -6,7 +6,7 @@ well as be configured appropriatly per environemt.
 
 [FreeMed Mirth Connect Github](https://github.com/freemed/mirth/tree/master/server)
 
-## Recomendations
+## Recommendations
 
 It is best practice to not include sql user or password information in Dockerfiles. For that reason we have provided addtional environment variables
 that can be added to a `docker-compose.override.yml` and injected via the [.env
