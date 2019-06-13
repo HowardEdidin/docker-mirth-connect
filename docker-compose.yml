@@ -1,0 +1,14 @@
+version: '3.7'
+services:
+  mirth:
+    image: stratuscube/mirth:latest
+    build: 
+      context: ./mirth
+    ports:
+      - "8080:8080"
+      - "8443:8443"
+    environment:
+      MIRTH_DATABASE: ${MIRTH_DATABASE}
+      MIRTH_DATABASE_URL: ${MIRTH_DATABASE_URL}
+      MIRTH_DATABASE_USERNAME: ${MIRTH_DATABASE_USER}
+      MIRTH_DATABASE_PASSWORD: ${SA_PASSWORD}

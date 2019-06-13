@@ -1,0 +1,9 @@
+# ignore override and dev files
+**/docker-compose*.override.yml
+**/docker-compose*.development.yml
+
+#ignore .env files use for variable substitution
+**/*.env
+
+# ignore data folders
+**/data
