@@ -55,6 +55,7 @@ RUN update-locale LANG=en_US.UTF-8
 #------ Set up container specifics ------#
 
 COPY entrypoint.sh set_props.java /app/
+RUN chmod +x /app/entrypoint.sh
 
 RUN javac /app/set_props.java -d /app \
     && rm /app/set_props.java
