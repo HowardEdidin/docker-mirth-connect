@@ -4,8 +4,6 @@ The [mirth connect](https://www.nextgen.com/products-and-services/integration-en
 docker is intended to allow for a stable way to run mirth within docker as 
 well as be configured appropriatly per environemt.
 
-[FreeMed Mirth Connect Github](https://github.com/freemed/mirth/tree/master/server)
-
 ## Recommendations
 
 It is best practice to not include sql user or password information in Dockerfiles. For that reason we have provided addtional environment variables
