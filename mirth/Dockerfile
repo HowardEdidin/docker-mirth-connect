@@ -60,7 +60,6 @@ EXPOSE 8080 8443
 
 COPY mirth.properties ${MIRTH_PROP_FILE}
 COPY entrypoint.sh set_props.java ./
-COPY data/ /data
 
 RUN javac set_props.java \
     && rm set_props.java

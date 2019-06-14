@@ -73,10 +73,5 @@ as we cannot have `mirth-server-launcher` start before the sql server is online.
 it is recommended to perform such a check even if you are using another external database that is not `mssql server`  or at least `sleep 20s`
 before starting `mirth-server-launcher`.
 
-<<<<<<< HEAD
 The installed `mssql-tools` will not effect anything if you leave the environemt
 variables to their defaults.
-=======
-The installs `mssql-tools` will not effect anything if you leave the environemt
-variables to their defaults.
->>>>>>> 7062377173d935395c233c9861377c6b91745989
