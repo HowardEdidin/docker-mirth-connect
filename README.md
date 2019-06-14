@@ -22,10 +22,6 @@ or other such docker environment files](https://docs.docker.com/compose/env-file
 
 The version of mirth to use for the container. Check out [NextGen's archive](http://downloads.mirthcorp.com/archive/connect/) for available version.
 
-##### MIRTH_PROP_FILE
-
-The path and file of where to copy the mirth.property file. 
-
 ##### MIRTH_TRANSFORM_PROPS
 
 The boolean value of whether or not to transform the `mirth.properties` 
