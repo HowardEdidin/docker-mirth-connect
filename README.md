@@ -1,5 +1,11 @@
 # Mirth Connect Docker
 
+## Supported Tags
+
+- 1.0.0, latest
+
+## Description
+
 The [mirth connect](https://www.nextgen.com/products-and-services/integration-engine) 
 docker is intended to allow for a stable way to run mirth within docker as 
 well as be configured appropriatly per environemt.
@@ -10,9 +16,7 @@ It is best practice to not include sql user or password information in Dockerfil
 that can be added to a `docker-compose.override.yml` and injected via the [.env
 or other such docker environment files](https://docs.docker.com/compose/env-file/).
 
-# The `mirth/Dockerfile`
-
-## Environment Variables
+# Environment Variables
 
 ##### MIRTH_CONNECT_VERSION
 
@@ -20,7 +24,7 @@ The version of mirth to use for the container. Check out [NextGen's archive](htt
 
 ##### MIRTH_PROP_FILE
 
-The path and file of where to copy the mirth.property file.
+The path and file of where to copy the mirth.property file. 
 
 ##### MIRTH_TRANSFORM_PROPS
 

@@ -1,3 +1,4 @@
+#!/bin/bash
 if [[ $MIRTH_DATABASE = sqlserver ]]
 then
     code=1
@@ -23,7 +24,7 @@ fi
 
 if [[ $MIRTH_TRANSFORM_PROPS = true ]]
 then
-    java set_props $MIRTH_PROP_FILE
+    java /app/set_props $MIRTH_PROP_FILE
 fi
 
 java -jar mirth-server-launcher.jar
