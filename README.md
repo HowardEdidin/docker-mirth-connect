@@ -71,7 +71,7 @@ The initial administrator password when the container starts. _(currently not in
 The `Dockerfile` located at `mirth/Dockerfile` includes an installation of [`mssql-tools`]
 (https://docs.microsoft.com/en-us/sql/tools/sqlcmd-utility?view=sql-server-2017)
 which are needed for our use case. The tools allow for `entrypoint.sh` to identify when the `mssql server` 
-is online, available, and if the `mirthdb` database has been created when using a seperate 
+is online, available, and if the `mirthdb` database has been created when using a separate 
 [mssql container](https://hub.docker.com/_/microsoft-mssql-server). 
 This is important as we cannot have `mirth-server-launcher` start before the sql server is online. 
 It is recommended to perform such a check even if you are using another external
