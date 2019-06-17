@@ -18,7 +18,11 @@ or other such docker environment files](https://docs.docker.com/compose/env-file
 
 # Environment Variables
 
-##### MSSQL_SERVER
+##### SQL_SERVER
+
+Specifies the name or ip address of the sql server to connect to.
+Currently used in entrypoint to wait on the MSSQL server, will be expanded later
+for mirth configurations.
 
 ##### MIRTH_CONNECT_VERSION
 
