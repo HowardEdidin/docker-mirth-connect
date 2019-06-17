@@ -4,7 +4,7 @@ LABEL author="Mark Pro"
 LABEL maintainter="StratusCube Core Dev Team"
 LABEL company="StratusCube LLC"
 
-ENV SQL_SERVER ''
+ENV MIRRTH_SQL_SERVER_NAME ''
 
 # Container specific properties
 ENV MIRTH_CONNECT_VERSION 3.7.1.b243
@@ -55,13 +55,14 @@ RUN update-locale LANG=en_US.UTF-8
 
 #------ Set up container specifics ------#
 
-COPY entrypoint.sh set_props.java /app/
+COPY entrypoint.sh /app/
 RUN chmod +x /app/entrypoint.sh
 
-RUN javac /app/set_props.java -d /app \
-    && rm /app/set_props.java
-
 WORKDIR /opt/mirth-connect
+
+COPY set_props.java ./
+RUN javac set_props.java \
+    && rm set_props.java
 
 EXPOSE 8080 8443
 

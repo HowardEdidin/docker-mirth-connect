@@ -2,6 +2,7 @@ version: '3.7'
 services:
   mirth:
     image: stratuscube/mirth-connect:1.0.1
+    container_name: mirth-connect
     build: 
       context: ./mirth
     ports:
