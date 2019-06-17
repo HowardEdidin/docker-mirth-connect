@@ -18,6 +18,8 @@ or other such docker environment files](https://docs.docker.com/compose/env-file
 
 # Environment Variables
 
+##### MSSQL_SERVER
+
 ##### MIRTH_CONNECT_VERSION
 
 The version of mirth to use for the container. Check out [NextGen's archive](http://downloads.mirthcorp.com/archive/connect/) for available version.

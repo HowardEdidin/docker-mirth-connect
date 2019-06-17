@@ -4,6 +4,8 @@ LABEL author="Mark Pro"
 LABEL maintainter="StratusCube Core Dev Team"
 LABEL company="StratusCube LLC"
 
+ENV SQL_SERVER ''
+
 # Container specific properties
 ENV MIRTH_CONNECT_VERSION 3.7.1.b243
 ENV MIRTH_TRANSFORM_PROPS false
@@ -45,8 +47,7 @@ RUN apt-get update \
     && curl https://packages.microsoft.com/config/ubuntu/16.04/prod.list \
     | tee /etc/apt/sources.list.d/msprod.list \
     && apt-get update \
-    && ACCEPT_EULA=Y apt-get install -y mssql-tools msodbcsql \
-    && export PATH="/opt/mssql-tools/bin:${PATH}"
+    && ACCEPT_EULA=Y apt-get install -y mssql-tools msodbcsql
 
 RUN apt-get -y install locales
 RUN locale-gen en_US.UTF-8
