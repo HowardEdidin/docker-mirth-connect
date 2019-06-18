@@ -4,7 +4,7 @@ then
     code=1
     while [ $code != 0 ]
     do
-        /opt/mssql-tools/bin/sqlcmd -S $SQL_SERVER -U sa \
+        /opt/mssql-tools/bin/sqlcmd -S $MIRTH_SQL_SERVER_NAME -U sa \
             -P $MIRTH_DATABASE_PASSWORD -Q "SELECT GETDATE()" \
             >> /dev/null
         code=$?
@@ -12,12 +12,12 @@ then
         sleep 1s
     done
 
-    result="$(/opt/mssql-tools/bin/sqlcmd -S $SQL_SERVER -U sa -P $MIRTH_DATABASE_PASSWORD \
+    result="$(/opt/mssql-tools/bin/sqlcmd -S $MIRTH_SQL_SERVER_NAME -U sa -P $MIRTH_DATABASE_PASSWORD \
             -Q "SELECT DB_ID('mirthdb')" -h-1 | grep NULL | xargs)"
 
     if [[ $result = NULL ]]
     then
-        /opt/mssql-tools/bin/sqlcmd -S $SQL_SERVER -U sa -P $MIRTH_DATABASE_PASSWORD \
+        /opt/mssql-tools/bin/sqlcmd -S $MIRTH_SQL_SERVER_NAME -U sa -P $MIRTH_DATABASE_PASSWORD \
             -Q "CREATE DATABASE mirthdb;"
     fi
 fi
