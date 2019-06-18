@@ -4,7 +4,7 @@ LABEL author="Mark Pro"
 LABEL maintainter="StratusCube Core Dev Team"
 LABEL company="StratusCube LLC"
 
-ENV MIRRTH_SQL_SERVER_NAME ''
+ENV MIRTH_SQL_SERVER_NAME ''
 
 # Container specific properties
 ENV MIRTH_CONNECT_VERSION 3.7.1.b243
