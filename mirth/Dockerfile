@@ -7,7 +7,7 @@ LABEL company="StratusCube LLC"
 ENV MIRTH_SQL_SERVER_NAME ''
 
 # Container specific properties
-ENV MIRTH_CONNECT_VERSION 3.7.1.b243
+ENV MIRTH_CONNECT_VERSION 3.8.0.b2464
 ENV MIRTH_TRANSFORM_PROPS false
 
 # Default settings for mirth database
@@ -61,6 +61,7 @@ RUN chmod +x /app/entrypoint.sh
 WORKDIR /opt/mirth-connect
 
 COPY set_props.java ./
+
 RUN javac set_props.java \
     && rm set_props.java
 
