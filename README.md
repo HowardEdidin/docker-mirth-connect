@@ -2,7 +2,8 @@
 
 ## Supported Tags
 
-- 1.1.1, latest
+- 1.2.0, latest
+- 1.1.1
 - 1.1.0
 - 1.0.0
 
@@ -19,6 +20,13 @@ that can be added to a `docker-compose.override.yml` and injected via the [.env
 or other such docker environment files](https://docs.docker.com/compose/env-file/).
 
 # Environment Variables
+
+##### MIRTH_CONFIG_FILE
+
+The file path to a mirth configuration file. If the file exists it will be imported on container start.
+An example may be `/data/mirth.config` mounted via a volume such as `-v ./data:/data`. Note that if this
+environment variable is populated and the file does not exist no config will be imported and you will be informed that "no configuration file could be located"
+even when the variable is not set.
 
 ##### MIRTH_SQL_SERVER_NAME
 

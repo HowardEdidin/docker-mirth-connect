@@ -27,4 +27,21 @@ then
     java set_props $MIRTH_PROP_FILE
 fi
 
-java -jar mirth-server-launcher.jar
+java -jar mirth-server-launcher.jar &
+
+if  [[ "$MIRTH_CONFIG_FILE" != "" && -f $MIRTH_CONFIG_FILE ]]
+then
+    echo importcfg $MIRTH_CONFIG_FILE > /app/mirth.script
+    echo waiting for mirth...
+    while ! nc -z localhost 8443
+    do
+        sleep 1
+    done
+
+    java -jar mirth-cli-launcher.jar -a https://localhost:8443 \
+        -u admin -p admin -v 0.0.0 -s /app/mirth.script
+else
+    echo no configuration file could be located
+fi
+
+wait

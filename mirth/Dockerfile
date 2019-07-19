@@ -18,6 +18,7 @@ ENV MIRTH_DATABASE derby
 ENV MIRTH_DATABASE_URL jdbc:derby:appdata/mirthdb;create=true
 ENV MIRTH_DATABASE_USERNAME ''
 ENV MIRTH_DATABASE_PASSWORD ''
+ENV MIRTH_CONFIG_FILE ''
 
 
 # admin is the default mirth password
@@ -52,6 +53,8 @@ RUN apt-get update \
 RUN apt-get -y install locales
 RUN locale-gen en_US.UTF-8
 RUN update-locale LANG=en_US.UTF-8
+
+RUN apt-get -y install netcat
 
 #------ Set up container specifics ------#
 
