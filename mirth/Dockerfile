@@ -8,6 +8,8 @@ LABEL company="StratusCube LLC"
 # Container specific properties
 ENV MIRTH_CONNECT_VERSION 3.8.0.b2464
 ENV MIRTH_TRANSFORM_PROPS false
+# admin is the default mirth password
+# http://www.mirthcorp.com/community/wiki/display/mirthuserguidev1r8p0/Login
 ENV MIRTH_ADMIN_PASSWORD ''
 # Default settings for mirth database
 # Configure here or in .env file for docker compose.
@@ -19,11 +21,6 @@ ENV MIRTH_DATABASE_URL jdbc:derby:appdata/mirthdb;create=true
 ENV MIRTH_DATABASE_USERNAME ''
 ENV MIRTH_DATABASE_PASSWORD ''
 ENV MIRTH_CONFIG_FILE ''
-
-
-# admin is the default mirth password
-# http://www.mirthcorp.com/community/wiki/display/mirthuserguidev1r8p0/Login
-ENV MIRTH_ADMIN_PASSWORD admin
 
 #------ Install open jdk and extract mirth ------#
 
