@@ -82,7 +82,7 @@ The password to login to any of the above sql servers with.
 ##### MIRTH_ADMIN_PASSWORD
 
 The initial administrator password when the container starts. When the
-variable is set it will overrite the password each time the container
+variable is set it will overwrite the password each time the container
 starts. When left blank the admin password _will not_ be modified.
 
 ## Considerations
