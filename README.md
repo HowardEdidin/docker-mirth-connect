@@ -2,7 +2,8 @@
 
 ## Supported Tags
 
-- 1.2.0, latest
+- 1.2.1, latest
+- 1.2.0
 - 1.1.1
 - 1.1.0
 - 1.0.0
