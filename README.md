@@ -9,8 +9,8 @@
 
 ## Description
 
-The [mirth connect](https://www.nextgen.com/products-and-services/integration-engine) 
-docker is intended to allow for a stable way to run mirth within docker as 
+The [mirth connect](https://www.nextgen.com/products-and-services/integration-engine)
+docker is intended to allow for a stable way to run mirth within docker as
 well as be configured appropriatly per environemt.
 
 ## Recommendations
@@ -40,18 +40,18 @@ The version of mirth to use for the container. Check out [NextGen's archive](htt
 
 ##### MIRTH_TRANSFORM_PROPS
 
-The boolean value of whether or not to transform the `mirth.properties` 
+The boolean value of whether or not to transform the `mirth.properties`
 file when the container starts; leaving the `mirth.properties` file untouched
 after the container is run.
 
 You may want to change `mirth.properties` when running the docker image
-to reflect your desired settings and not use the `MIRTH_*` environement 
+to reflect your desired settings and not use the `MIRTH_*` environement
 variables.
 
-When set to `true` `set_props` runs when the container starts which substitutes various 
-mirth properties with environment variables.
+When set to `true` `set_props` runs when the container starts which
+substitutes various mirth properties with environment variables.
 
-The default is set to false, but if you wish to transform the property file change this value to true. _The value is case sensative_. 
+The default is set to false, but if you wish to transform the property file change this value to true. _The value is case sensative_.
 
 ##### MIRTH_DATABASE
 
@@ -93,4 +93,5 @@ It is recommended to perform such a check even if you are using another external
 database that is not `mssql server`  or at least `sleep 20s` before starting `mirth-server-launcher`.
 
 The installed `mssql-tools` will not effect anything if you leave the environemt
-variables to their defaults and will only run if `MIRTH_DATABSE` is set to `sqlserver`.
+variables to their defaults and will only run if `MIRTH_DATABSE` is set to `sqlserver`. __When `sqlserver` is specified the mirth will not prompt for
+the registration of users or show notifications on startup.

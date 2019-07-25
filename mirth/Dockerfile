@@ -58,6 +58,7 @@ RUN apt-get -y install netcat
 
 #------ Set up container specifics ------#
 
+COPY init.sql /app/
 COPY entrypoint.sh /app/
 RUN chmod +x /app/entrypoint.sh
 

@@ -1,5 +1,6 @@
 #!/bin/bash
-if [[ $MIRTH_DATABASE = sqlserver ]]
+[[ "$MIRTH_DATABASE" == "sqlserver" ]] && isSqlServer=true || isSqlServer=false
+if $isSqlServer ;
 then
     code=1
     while [ $code != 0 ]
@@ -29,19 +30,29 @@ fi
 
 java -jar mirth-server-launcher.jar &
 
+echo waiting for mirth...
+while ! nc -z localhost 8443
+do
+    sleep 1
+done
+
+if $isSqlServer ;
+then
+    echo initializing user
+    /opt/mssql-tools/bin/sqlcmd -S $MIRTH_SQL_SERVER_NAME -U sa \
+            -P $MIRTH_DATABASE_PASSWORD -i "/app/init.sql" \
+            >> /dev/null
+fi
+
 if  [[ "$MIRTH_CONFIG_FILE" != "" && -f $MIRTH_CONFIG_FILE ]]
 then
     echo importcfg $MIRTH_CONFIG_FILE > /app/mirth.script
-    echo waiting for mirth...
-    while ! nc -z localhost 8443
-    do
-        sleep 1
-    done
 
     java -jar mirth-cli-launcher.jar -a https://localhost:8443 \
         -u admin -p admin -v 0.0.0 -s /app/mirth.script
 else
-    echo no configuration file could be located
+    echo no configuration file could be located or none was \
+        specified
 fi
 
 wait
