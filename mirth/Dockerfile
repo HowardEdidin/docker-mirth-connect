@@ -4,16 +4,16 @@ LABEL author="Mark Pro"
 LABEL maintainter="StratusCube Core Dev Team"
 LABEL company="StratusCube LLC"
 
-ENV MIRTH_SQL_SERVER_NAME ''
 
 # Container specific properties
 ENV MIRTH_CONNECT_VERSION 3.8.0.b2464
 ENV MIRTH_TRANSFORM_PROPS false
-
+ENV MIRTH_ADMIN_PASSWORD ''
 # Default settings for mirth database
 # Configure here or in .env file for docker compose.
 # https://docs.docker.com/compose/env-file/
 # mirht.properties props are set in set_props.java
+ENV MIRTH_SQL_SERVER_NAME ''
 ENV MIRTH_DATABASE derby
 ENV MIRTH_DATABASE_URL jdbc:derby:appdata/mirthdb;create=true
 ENV MIRTH_DATABASE_USERNAME ''

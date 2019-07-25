@@ -61,7 +61,7 @@ Assigns to property `database` in `mirth.properties`. Available options are: `de
 
 Assigns to property `database.url` in `mirth.properties`
 
-```
+```bash
 # examples:
 # Derby jdbc:derby:${dir.appdata}/mirthdb;create=true
 # PostgreSQL jdbc:postgresql://localhost:5432/mirthdb
@@ -80,15 +80,17 @@ The password to login to any of the above sql servers with.
 
 ##### MIRTH_ADMIN_PASSWORD
 
-The initial administrator password when the container starts. _(currently not in use)_
+The initial administrator password when the container starts. When the
+variable is set it will overrite the password each time the container
+starts. When left blank the admin password _will not_ be modified.
 
 ## Considerations
 
 The `Dockerfile` located at `mirth/Dockerfile` includes an installation of [`mssql-tools`](https://docs.microsoft.com/en-us/sql/tools/sqlcmd-utility?view=sql-server-2017)
-which are needed for our use case. The tools allow for `entrypoint.sh` to identify when the `mssql server` 
-is online, available, and if the `mirthdb` database has been created when using a separate 
-[mssql container](https://hub.docker.com/_/microsoft-mssql-server). 
-This is important as we cannot have `mirth-server-launcher` start before the sql server is online. 
+which are needed for our use case. The tools allow for `entrypoint.sh` to identify when the `mssql server`
+is online, available, and if the `mirthdb` database has been created when using a separate
+[mssql container](https://hub.docker.com/_/microsoft-mssql-server).
+This is important as we cannot have `mirth-server-launcher` start before the sql server is online.
 It is recommended to perform such a check even if you are using another external
 database that is not `mssql server`  or at least `sleep 20s` before starting `mirth-server-launcher`.
 

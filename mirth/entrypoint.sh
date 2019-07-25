@@ -44,15 +44,27 @@ then
             >> /dev/null
 fi
 
+mirth_script=/app/mirth.script
+
+cat > $mirth_script
+
+if [[ "$MIRTH_ADMIN_PASSWORD" != "" ]]
+then
+    echo user changepw admin $MIRTH_ADMIN_PASSWORD >> $mirth_script
+fi
+
 if  [[ "$MIRTH_CONFIG_FILE" != "" && -f $MIRTH_CONFIG_FILE ]]
 then
-    echo importcfg $MIRTH_CONFIG_FILE > /app/mirth.script
-
-    java -jar mirth-cli-launcher.jar -a https://localhost:8443 \
-        -u admin -p admin -v 0.0.0 -s /app/mirth.script
+    echo importcfg $MIRTH_CONFIG_FILE >> $mirth_script
 else
     echo no configuration file could be located or none was \
         specified
+fi
+
+if [ -s $mirth_script ]
+then
+    java -jar mirth-cli-launcher.jar -a https://localhost:8443 \
+        -u admin -p admin -v 0.0.0 -s /app/mirth.script
 fi
 
 wait
