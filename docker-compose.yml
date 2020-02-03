@@ -1,7 +1,7 @@
 version: '3.7'
 services:
   mirth:
-    image: stratuscube/mirth-connect:latest
+    image: hedidin/fhirtofhir:v1
     container_name: mirth-connect
     build: 
       context: ./mirth
