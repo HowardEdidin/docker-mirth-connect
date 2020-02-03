@@ -1,13 +1,13 @@
 FROM ubuntu:16.04
 
-LABEL author="Mark Pro"
-LABEL maintainter="StratusCube Core Dev Team"
-LABEL company="StratusCube LLC"
+LABEL author="Howard Edidin"
+LABEL maintainter="The Core Dev Team"
+
 
 
 # Container specific properties
 ENV MIRTH_CONNECT_VERSION 3.8.0.b2464
-ENV MIRTH_TRANSFORM_PROPS false
+ENV MIRTH_TRANSFORM_PROPS true
 # admin is the default mirth password
 # http://www.mirthcorp.com/community/wiki/display/mirthuserguidev1r8p0/Login
 ENV MIRTH_ADMIN_PASSWORD ''
