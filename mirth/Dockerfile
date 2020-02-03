@@ -16,10 +16,10 @@ ENV MIRTH_ADMIN_PASSWORD ''
 # https://docs.docker.com/compose/env-file/
 # mirht.properties props are set in set_props.java
 ENV MIRTH_SQL_SERVER_NAME ''
-ENV MIRTH_DATABASE derby
-ENV MIRTH_DATABASE_URL jdbc:derby:appdata/mirthdb;create=true
-ENV MIRTH_DATABASE_USERNAME ''
-ENV MIRTH_DATABASE_PASSWORD ''
+ENV MIRTH_DATABASE sqlserver
+ENV MIRTH_DATABASE_URL jdbc:jtds:sqlserver://localhost:1433/mirthdb
+ENV MIRTH_DATABASE_USERNAME sa
+ENV MIRTH_DATABASE_PASSWORD Suyo1054
 ENV MIRTH_CONFIG_FILE ''
 
 #------ Install open jdk and extract mirth ------#
