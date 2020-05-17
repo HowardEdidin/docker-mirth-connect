@@ -1,7 +1,7 @@
 version: '3.7'
 services:
   mirth:
-    image: hedidin/fhirtofhir:v1
+    image: hedidin/mirthonsql:dev
     container_name: mirth-connect
     build: 
       context: ./mirth
